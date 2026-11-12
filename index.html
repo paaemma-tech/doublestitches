@@ -1,0 +1,1355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1B3E30">
+  <meta name="description" content="Double Stitches — Luxury in Every Detail. Discover refined fashion for men and women.">
+  <title>Double Stitches | Luxury in Every Detail</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #1B3E30;
+      --green-dark: #10291F;
+      --gold: #C5A044;
+      --cream: #F7F5EF;
+      --white: #FFFFFF;
+      --ink: #20251F;
+      --muted: #777B74;
+      --border: #E7E4DB;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+    }
+
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+
+    .announcement {
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    header {
+      background: var(--green);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .nav {
+      max-width: 1400px;
+      margin: auto;
+      min-height: 86px;
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 200px;
+    }
+
+    .monogram {
+      width: 47px;
+      height: 47px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      letter-spacing: -3px;
+      padding-right: 3px;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      letter-spacing: 2px;
+    }
+
+    .brand-tag {
+      color: var(--gold);
+      font-size: 8px;
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .cart-button, .menu-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .cart-count {
+      display: inline-grid;
+      place-items: center;
+      background: var(--gold);
+      color: var(--green-dark);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .menu-button { display: none; font-size: 22px; }
+
+    .hero {
+      min-height: 650px;
+      background:
+        linear-gradient(90deg, rgba(12,28,20,.82), rgba(12,28,20,.18)),
+        url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=2000&q=90') center 35%/cover;
+      display: flex;
+      align-items: center;
+      color: white;
+      padding: 80px 9%;
+    }
+
+    .hero-content { max-width: 650px; }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: 1.08;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 440px;
+      color: rgba(255,255,255,.83);
+      line-height: 1.9;
+      font-size: 14px;
+      margin-bottom: 35px;
+    }
+
+    .gold-button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      border: 1px solid var(--gold);
+      padding: 16px 30px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .gold-button:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .section {
+      max-width: 1400px;
+      margin: auto;
+      padding: 95px 5%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading .eyebrow { margin-bottom: 13px; }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--green);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 400;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .collections {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .collection-card {
+      min-height: 430px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background: var(--green);
+    }
+
+    .collection-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      display: block;
+      transition: transform .7s;
+    }
+
+    .collection-card:hover img { transform: scale(1.04); }
+
+    .collection-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 38px;
+      background: linear-gradient(transparent 25%, rgba(0,0,0,.68));
+    }
+
+    .collection-overlay span {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .collection-overlay h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 400;
+      margin: 10px 0 18px;
+    }
+
+    .collection-overlay a {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      width: fit-content;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 7px;
+    }
+
+    .shop-section { background: #EFEEE8; }
+
+    .shop-section .section { padding-top: 85px; }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .filter-button {
+      border: 1px solid #D7D4C9;
+      background: transparent;
+      color: var(--green);
+      padding: 10px 20px;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .filter-button.active,
+    .filter-button:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px 20px;
+    }
+
+    .product-card { min-width: 0; }
+
+    .product-image {
+      position: relative;
+      overflow: hidden;
+      background: #E4E1D8;
+      aspect-ratio: 3/4;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s;
+    }
+
+    .product-card:hover .product-image img { transform: scale(1.04); }
+
+    .product-label {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--green);
+      color: white;
+      padding: 7px 10px;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-info { padding: 17px 2px; }
+
+    .product-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--green);
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: 11px;
+      margin: 6px 0 12px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .price { font-weight: 700; font-size: 14px; }
+
+    .add-button {
+      background: var(--green);
+      color: white;
+      border: 1px solid var(--green);
+      padding: 10px 14px;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .add-button:hover { background: var(--gold); color: var(--green-dark); border-color: var(--gold); }
+
+    .craft-section {
+      background: var(--green);
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+    }
+
+    .craft-image {
+      min-height: 420px;
+      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85') center/cover;
+    }
+
+    .craft-content {
+      padding: 80px 12%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .craft-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(35px, 4vw, 53px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+
+    .craft-content p {
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      line-height: 2;
+      margin-bottom: 28px;
+    }
+
+    .about-link {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      width: fit-content;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 7px;
+    }
+
+    .newsletter {
+      text-align: center;
+      padding: 90px 20px;
+      background: var(--cream);
+    }
+
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    .newsletter p {
+      color: var(--muted);
+      margin: 13px auto 25px;
+      font-size: 13px;
+    }
+
+    .newsletter a {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 15px 25px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      background: var(--green-dark);
+      color: white;
+      padding: 65px 6% 25px;
+    }
+
+    .footer-grid {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 45px;
+    }
+
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 17px;
+    }
+
+    footer p, footer a {
+      color: rgba(255,255,255,.65);
+      font-size: 12px;
+      line-height: 2.1;
+      display: block;
+    }
+
+    footer a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1300px;
+      margin: auto;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.15);
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      color: rgba(255,255,255,.5);
+      font-size: 10px;
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.5);
+      z-index: 100;
+      display: none;
+    }
+
+    .cart-overlay.open { display: block; }
+
+    .cart-panel {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: min(440px, 100%);
+      background: var(--cream);
+      padding: 28px;
+      overflow-y: auto;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+
+    .cart-header h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    .close-cart {
+      border: none;
+      background: none;
+      font-size: 25px;
+      color: var(--green);
+    }
+
+    .cart-items { padding: 20px 0; }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 75px 1fr;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item img {
+      width: 75px;
+      height: 95px;
+      object-fit: cover;
+    }
+
+    .cart-item h4 {
+      color: var(--green);
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .cart-item p { font-size: 11px; color: var(--muted); margin-bottom: 7px; }
+
+    .quantity-controls { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+
+    .quantity-controls button {
+      width: 25px;
+      height: 25px;
+      background: transparent;
+      border: 1px solid var(--border);
+    }
+
+    .remove-item {
+      border: none;
+      background: none;
+      color: #9B5147;
+      font-size: 10px;
+      margin-top: 8px;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      color: var(--green);
+    }
+
+    .checkout-button {
+      width: 100%;
+      background: var(--green);
+      color: white;
+      padding: 17px;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 50px 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      background: rgba(0,0,0,.65);
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .modal.open { display: grid; }
+
+    .modal-content {
+      width: min(480px, 100%);
+      background: var(--cream);
+      padding: 30px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-content h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--green);
+      font-weight: 400;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .modal-content > p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .form-field { margin-bottom: 15px; }
+
+    .form-field label {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+      color: var(--green);
+    }
+
+    .form-field input, .form-field select, .form-field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: white;
+      padding: 13px;
+      outline: none;
+      font-size: 12px;
+    }
+
+    .form-field textarea { min-height: 75px; resize: vertical; }
+
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-actions { display: flex; gap: 10px; margin-top: 20px; }
+
+    .form-actions button { flex: 1; }
+
+    .cancel-button {
+      background: transparent;
+      border: 1px solid var(--green);
+      color: var(--green);
+      padding: 15px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 80;
+      background: #187A48;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 40px;
+      font-size: 11px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 85px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green-dark);
+      color: white;
+      padding: 13px 22px;
+      font-size: 12px;
+      z-index: 150;
+      display: none;
+    }
+
+    .toast.show { display: block; }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--green);
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.open { display: flex; }
+      .menu-button { display: block; }
+      .products { grid-template-columns: repeat(2, 1fr); }
+      .craft-section { grid-template-columns: 1fr; }
+      .craft-image { min-height: 380px; }
+      .craft-content { padding: 60px 8%; }
+    }
+
+    @media (max-width: 600px) {
+      .nav { min-height: 72px; padding: 12px 5%; }
+      .brand-name { font-size: 15px; }
+      .brand-tag { font-size: 7px; }
+      .monogram { width: 40px; height: 40px; }
+      .hero { min-height: 570px; padding: 60px 7%; }
+      .hero h1 { font-size: 52px; }
+      .section { padding: 65px 5%; }
+      .collections { grid-template-columns: 1fr; }
+      .collection-card, .collection-card img { min-height: 360px; }
+      .products { gap: 24px 12px; }
+      .product-info h3 { font-size: 16px; }
+      .product-bottom { align-items: flex-start; flex-direction: column; }
+      .add-button { width: 100%; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; }
+      .whatsapp-float { bottom: 15px; right: 15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    Complimentary style consultation · Luxury in Every Detail
+  </div>
+
+  <header>
+    <nav class="nav">
+      <a href="#" class="brand">
+        <div class="monogram">DS</div>
+        <div>
+          <div class="brand-name">DOUBLE STITCHES</div>
+          <div class="brand-tag">LUXURY IN EVERY DETAIL</div>
+        </div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#shop">Shop</a>
+        <a href="#story">Our Story</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="cart-button" onclick="toggleCart(true)">
+          BAG <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-button" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">THE ART OF REFINED DRESSING</div>
+        <h1>Elegance is<br>in the details.</h1>
+        <p>
+          Discover a world where thoughtful design meets exceptional
+          craftsmanship. Fashion created to express your individuality
+          and elevate every moment.
+        </p>
+        <a href="#shop" class="gold-button">Explore the collection</a>
+      </div>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="section-heading">
+        <div class="eyebrow">DISCOVER DOUBLE STITCHES</div>
+        <h2>Curated for your expression</h2>
+        <p>Distinctive pieces. Timeless character. Effortless confidence.</p>
+      </div>
+
+      <div class="collections">
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85" alt="Women's fashion collection">
+          <div class="collection-overlay">
+            <span>DS WOMEN</span>
+            <h3>The art of femininity</h3>
+            <a href="#shop" onclick="setFilter('Women')">Discover collection →</a>
+          </div>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1000&q=85" alt="Men's fashion collection">
+          <div class="collection-overlay">
+            <span>DS MEN</span>
+            <h3>Refined by design</h3>
+            <a href="#shop" onclick="setFilter('Men')">Discover collection →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="shop-section" id="shop">
+      <section class="section">
+        <div class="section-heading">
+          <div class="eyebrow">THE DOUBLE STITCHES EDIT</div>
+          <h2>Selected pieces</h2>
+          <p>Explore our latest expressions of style and craftsmanship.</p>
+        </div>
+
+        <div class="filters">
+          <button class="filter-button active" onclick="setFilter('All', this)">All pieces</button>
+          <button class="filter-button" onclick="setFilter('Women', this)">Women</button>
+          <button class="filter-button" onclick="setFilter('Men', this)">Men</button>
+          <button class="filter-button" onclick="setFilter('Unisex', this)">Unisex</button>
+          <button class="filter-button" onclick="setFilter('Heritage', this)">Heritage</button>
+        </div>
+
+        <div class="products" id="products"></div>
+      </section>
+    </div>
+
+    <section class="craft-section" id="story">
+      <div class="craft-image"></div>
+      <div class="craft-content">
+        <div class="eyebrow">OUR PHILOSOPHY</div>
+        <h2>More than fashion.<br>A standard of excellence.</h2>
+        <p>
+          Double Stitches is built on the belief that true luxury lies
+          in the details. We bring together modern design, refined
+          aesthetics and exceptional craftsmanship to create timeless
+          fashion for men and women.
+          <br><br>
+          Every piece reflects our passion for design, individuality
+          and the pursuit of excellence.
+        </p>
+        <a class="about-link" href="#contact">Discover our story →</a>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="eyebrow">BE PART OF OUR WORLD</div>
+      <h2>Style begins here.</h2>
+      <p>Connect with Double Stitches for new collections, personal styling and enquiries.</p>
+      <a id="contactButton" href="#contact">Connect with us</a>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <h3>DOUBLE STITCHES</h3>
+        <p>Luxury in Every Detail.</p>
+        <p>
+          Contemporary fashion shaped by thoughtful design,
+          individuality and exceptional craftsmanship.
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="#shop">Shop all</a>
+        <a href="#collections">Collections</a>
+        <a href="#story">Our story</a>
+      </div>
+
+      <div>
+        <h3>Connect</h3>
+        <a id="whatsappLink" href="#" target="_blank">WhatsApp</a>
+        <a href="mailto:hello@doublestitches.com">Email us</a>
+        <a href="#contact">Customer enquiries</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Double Stitches. All rights reserved.</span>
+      <span>CRAFTED WITH PURPOSE. WORN WITH CONFIDENCE.</span>
+    </div>
+  </footer>
+
+  <!-- SHOPPING CART -->
+  <div class="cart-overlay" id="cartOverlay" onclick="outsideCart(event)">
+    <div class="cart-panel">
+      <div class="cart-header">
+        <h2>Your shopping bag</h2>
+        <button class="close-cart" onclick="toggleCart(false)">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <span id="cartTotal">GH₵0.00</span>
+      </div>
+      <button class="checkout-button" onclick="openCheckout()">Continue to order</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT OPTIONS -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <h2 id="modalProductName">Product name</h2>
+      <p id="modalProductPrice"></p>
+
+      <div class="form-field">
+        <label for="productSize">Select size</label>
+        <select id="productSize">
+          <option value="">Choose your size</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+          <option>XXL</option>
+          <option>Custom size</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="productColour">Select colour</label>
+        <select id="productColour">
+          <option value="">Choose a colour</option>
+          <option>Black</option>
+          <option>White</option>
+          <option>Forest Green</option>
+          <option>Gold</option>
+          <option>Brown</option>
+          <option>Other / Custom</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="productQuantity">Quantity</label>
+        <input type="number" id="productQuantity" min="1" value="1">
+      </div>
+
+      <div class="form-actions">
+        <button class="cancel-button" onclick="closeProductModal()">Cancel</button>
+        <button class="checkout-button" onclick="confirmAddToCart()">Add to bag</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOMER CHECKOUT -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-content">
+      <h2>Complete your order</h2>
+      <p>Enter your details. We'll prepare your order enquiry for Double Stitches.</p>
+
+      <form id="checkoutForm">
+        <div class="form-field">
+          <label for="customerName">Full name</label>
+          <input id="customerName" required placeholder="Your full name">
+        </div>
+
+        <div class="form-field">
+          <label for="customerPhone">Phone / WhatsApp</label>
+          <input id="customerPhone" type="tel" required placeholder="+233...">
+        </div>
+
+        <div class="form-field">
+          <label for="customerEmail">Email address</label>
+          <input id="customerEmail" type="email" placeholder="you@example.com">
+        </div>
+
+        <div class="form-field">
+          <label for="customerLocation">Delivery location</label>
+          <input id="customerLocation" required placeholder="Town, city, country">
+        </div>
+
+        <div class="form-field">
+          <label for="customerNotes">Additional instructions</label>
+          <textarea id="customerNotes" placeholder="Delivery preferences, custom measurements, etc."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="cancel-button" onclick="closeCheckout()">Back</button>
+          <button type="submit" class="checkout-button">Send order enquiry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Added to your shopping bag.</div>
+
+  <a class="whatsapp-float" id="floatingWhatsApp" href="#" target="_blank">
+    WhatsApp us
+  </a>
+
+  <script>
+    /*
+      IMPORTANT:
+      Replace this with the official Double Stitches WhatsApp number.
+      Use country code and digits only, without + or spaces.
+      Example Ghana format: 233XXXXXXXXX
+    */
+    const WHATSAPP_NUMBER = "233XXXXXXXXX";
+
+    /*
+      SAMPLE PRODUCTS:
+      Replace names, prices and images with actual Double Stitches products.
+      Prices are examples in Ghana cedis.
+    */
+    const products = [
+      {
+        id: 1,
+        name: "The Atelier Two-Piece",
+        category: "Women",
+        price: 850,
+        description: "Contemporary two-piece set",
+        label: "Featured",
+        image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85"
+      },
+      {
+        id: 2,
+        name: "The Signature Shirt",
+        category: "Men",
+        price: 420,
+        description: "Refined everyday tailoring",
+        label: "New arrival",
+        image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=85"
+      },
+      {
+        id: 3,
+        name: "The Form Dress",
+        category: "Women",
+        price: 690,
+        description: "An expression of elegance",
+        label: "Bestseller",
+        image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=900&q=85"
+      },
+      {
+        id: 4,
+        name: "The Relaxed Trouser",
+        category: "Men",
+        price: 480,
+        description: "Modern relaxed silhouette",
+        label: "",
+        image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=85"
+      },
+      {
+        id: 5,
+        name: "The Modern Kaftan",
+        category: "Heritage",
+        price: 950,
+        description: "Contemporary heritage design",
+        label: "Signature",
+        image: "https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?auto=format&fit=crop&w=900&q=85"
+      },
+      {
+        id: 6,
+        name: "The Everyday Tee",
+        category: "Unisex",
+        price: 260,
+        description: "Understated everyday essential",
+        label: "",
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85"
+      }
+    ];
+
+    let cart = [];
+    let selectedProduct = null;
+    let activeFilter = "All";
+
+    const money = amount =>
+      new Intl.NumberFormat("en-GH", {
+        style: "currency",
+        currency: "GHS",
+        minimumFractionDigits: 2
+      }).format(amount);
+
+    function renderProducts() {
+      const container = document.getElementById("products");
+
+      const filtered = activeFilter === "All"
+        ? products
+        : products.filter(product => product.category === activeFilter);
+
+      container.innerHTML = filtered.map(product => `
+        <article class="product-card">
+          <div class="product-image">
+            <img src="${product.image}" alt="${product.name}" loading="lazy">
+            ${product.label ? `<span class="product-label">${product.label}</span>` : ""}
+          </div>
+          <div class="product-info">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <div class="product-bottom">
+              <span class="price">${money(product.price)}</span>
+              <button class="add-button" onclick="openProductModal(${product.id})">
+                Select options
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function setFilter(category, button) {
+      activeFilter = category;
+
+      document.querySelectorAll(".filter-button").forEach(item => {
+        item.classList.toggle(
+          "active",
+          item.textContent.trim().toLowerCase() ===
+          (category === "All" ? "all pieces" : category.toLowerCase())
+        );
+      });
+
+      if (button) {
+        document.querySelectorAll(".filter-button").forEach(item =>
+          item.classList.remove("active")
+        );
+        button.classList.add("active");
+      }
+
+      renderProducts();
+    }
+
+    function openProductModal(id) {
+      selectedProduct = products.find(product => product.id === id);
+      if (!selectedProduct) return;
+
+      document.getElementById("modalProductName").textContent = selectedProduct.name;
+      document.getElementById("modalProductPrice").textContent = money(selectedProduct.price);
+      document.getElementById("productSize").value = "";
+      document.getElementById("productColour").value = "";
+      document.getElementById("productQuantity").value = 1;
+      document.getElementById("productModal").classList.add("open");
+    }
+
+    function closeProductModal() {
+      document.getElementById("productModal").classList.remove("open");
+    }
+
+    function confirmAddToCart() {
+      const size = document.getElementById("productSize").value;
+      const colour = document.getElementById("productColour").value;
+      const quantity = Number(document.getElementById("productQuantity").value);
+
+      if (!size || !colour) {
+        alert("Please select both size and colour.");
+        return;
+      }
+
+      if (!Number.isInteger(quantity) || quantity < 1) {
+        alert("Please enter a valid quantity.");
+        return;
+      }
+
+      const existing = cart.find(item =>
+        item.id === selectedProduct.id &&
+        item.size === size &&
+        item.colour === colour
+      );
+
+      if (existing) {
+        existing.quantity += quantity;
+      } else {
+        cart.push({
+          ...selectedProduct,
+          size,
+          colour,
+          quantity
+        });
+      }
+
+      closeProductModal();
+      renderCart();
+      showToast("Added to your shopping bag.");
+    }
+
+    function renderCart() {
+      const container = document.getElementById("cartItems");
+      const count = cart.reduce((total, item) => total + item.quantity, 0);
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      document.getElementById("cartCount").textContent = count;
+      document.getElementById("cartTotal").textContent = money(total);
+
+      if (cart.length === 0) {
+        container.innerHTML = `<div class="empty-cart">Your shopping bag is empty.<br><br>Discover something exceptional.</div>`;
+        return;
+      }
+
+      container.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}">
+          <div>
+            <h4>${item.name}</h4>
+            <p>Size: ${item.size} · Colour: ${item.colour}</p>
+            <strong>${money(item.price * item.quantity)}</strong>
+            <div class="quantity-controls">
+              <button onclick="changeQuantity(${index}, -1)">−</button>
+              <span>${item.quantity}</span>
+              <button onclick="changeQuantity(${index}, 1)">+</button>
+            </div>
+            <button class="remove-item" onclick="removeItem(${index})">Remove</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function changeQuantity(index, change) {
+      cart[index].quantity += change;
+
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function toggleCart(open) {
+      document.getElementById("cartOverlay").classList.toggle("open", open);
+    }
+
+    function outsideCart(event) {
+      if (event.target.id === "cartOverlay") toggleCart(false);
+    }
+
+    function openCheckout() {
+      if (cart.length === 0) {
+        alert("Your shopping bag is empty.");
+        return;
+      }
+
+      toggleCart(false);
+      document.getElementById("checkoutModal").classList.add("open");
+    }
+
+    function closeCheckout() {
+      document.getElementById("checkoutModal").classList.remove("open");
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2500);
+    }
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+
+    document.getElementById("checkoutForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (cart.length === 0) {
+        alert("Your shopping bag is empty.");
+        closeCheckout();
+        return;
+      }
+
+      if (WHATSAPP_NUMBER.includes("X")) {
+        alert("The store owner needs to add the official WhatsApp number in the website code before orders can be sent.");
+        return;
+      }
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const email = document.getElementById("customerEmail").value.trim();
+      const location = document.getElementById("customerLocation").value.trim();
+      const notes = document.getElementById("customerNotes").value.trim();
+
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      let message = `*DOUBLE STITCHES — NEW ORDER ENQUIRY*\n\n`;
+      message += `*Customer:* ${name}\n`;
+      message += `*Phone:* ${phone}\n`;
+      message += `*Email:* ${email || "Not provided"}\n`;
+      message += `*Delivery location:* ${location}\n\n`;
+      message += `*ORDER DETAILS*\n`;
+
+      cart.forEach((item, index) => {
+        message += `\n${index + 1}. ${item.name}\n`;
+        message += `Size: ${item.size}\n`;
+        message += `Colour: ${item.colour}\n`;
+        message += `Quantity: ${item.quantity}\n`;
+        message += `Price: ${money(item.price * item.quantity)}\n`;
+      });
+
+      message += `\n*ORDER SUBTOTAL: ${money(total)}*\n`;
+      message += `\n*Additional instructions:* ${notes || "None"}\n`;
+      message += `\nPlease confirm availability, delivery charges and payment instructions.`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, "_blank");
+    });
+
+    function setupWhatsAppLinks() {
+      const configured = !WHATSAPP_NUMBER.includes("X");
+      const url = configured
+        ? `https://wa.me/${WHATSAPP_NUMBER}`
+        : "https://wa.me/";
+
+      document.getElementById("whatsappLink").href = url;
+      document.getElementById("floatingWhatsApp").href = url;
+      document.getElementById("contactButton").href = url;
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("open");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderProducts();
+    renderCart();
+    setupWhatsAppLinks();
+  </script>
+</body>
+</html>
